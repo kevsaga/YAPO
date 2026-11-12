@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YAPO | Negocios y Marcas</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">    
+        <nav>
+            <a href="Inicio.html#inicio">Inicio</a>
+            <a href="Inicio.html#Servicios">Servicios</a>
+            <a href="Inicio.html#Contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+    
+        <section class="Presentacion">
+            <div class="Presentacion-Descripcion">
+                <h1>Agencias y Marcas</h1>
+                <p class="Rol">Publica tus campañas BTL y encuentra el talento perfecto.</p>
+            </div>
+            <div class="Presentacion-Logo">
+                <img src="imagenes/Negocio.png" alt="Negocio" class="Tarjeta-im">
+            </div>
+        </section>
+
+        <section class="seccion seccion2" id="campanas">
+            <h2>Campañas y Vacantes Activas</h2>
+            <p class="Sobremi">Explora las marcas que confían en nuestra plataforma o publica tu propia actividad comercial.</p>
+            
+            <div class="Barra-filtros">
+                <input type="search" class="Form-control" data-buscar placeholder="Buscar campaña, marca o ciudad" aria-label="Buscar vacantes">
+                <select class="Form-control" data-ciudad aria-label="Filtrar por ciudad"></select>
+                <button type="button" class="btn-yapo" data-abrir="modalVacante">Publicar vacante</button>
+            </div>
+
+            <div class="Tarjetas" id="listaVacantes"></div>
+        </section>
+    </main>
+
+
+    <dialog class="Modal" id="modalVacante" aria-labelledby="tituloModalVacante">
+        <form method="dialog">
+            <div class="Modal-cabecera">
+                <h2 id="tituloModalVacante">Publica tu vacante</h2>
+            </div>
+            <div class="Modal-cuerpo">
+                <div class="Form-fila">
+                    <div class="Form-grupo">
+                        <label for="v-titulo">Título de la vacante</label>
+                        <input class="Form-control" id="v-titulo" name="titulo" required maxlength="70">
+                    </div>
+                    <div class="Form-grupo">
+                        <label for="v-marca">Marca o agencia</label>
+                        <input class="Form-control" id="v-marca" name="marca" required maxlength="50">
+                    </div>
+                </div>
+                <div class="Form-grupo">
+                    <label for="v-descripcion">Descripción</label>
+                    <textarea class="Form-control" id="v-descripcion" name="descripcion" rows="3" required maxlength="250"></textarea>
+                </div>
+                <div class="Form-fila">
+                    <div class="Form-grupo">
+                        <label for="v-ciudad">Ciudad</label>
+                        <input class="Form-control" id="v-ciudad" name="ciudad" required maxlength="40">
+                    </div>
+                    <div class="Form-grupo">
+                        <label for="v-lugar">Lugar o zona</label>
+                        <input class="Form-control" id="v-lugar" name="lugar" maxlength="60" placeholder="CC Andino">
+                    </div>
+                </div>
+                <div class="Form-fila">
+                    <div class="Form-grupo">
+                        <label for="v-horario">Fecha u horario</label>
+                        <input class="Form-control" id="v-horario" name="horario" maxlength="60" placeholder="Sábados, turnos de 6 h">
+                    </div>
+                    <div class="Form-grupo">
+                        <label for="v-pago">Pago</label>
+                        <input class="Form-control" id="v-pago" name="pago" maxlength="60" placeholder="Pago diario">
+                    </div>
+                </div>
+                <div class="Form-grupo">
+                    <label for="v-perfil">Perfil requerido</label>
+                    <input class="Form-control" id="v-perfil" name="perfil" maxlength="60" placeholder="Experiencia en BTL">
+                </div>
+                <div class="Form-grupo">
+                    <label for="v-email">Correo para postulaciones</label>
+                    <input class="Form-control" id="v-email" name="email" type="email" required>
+                </div>
+                <div class="Form-grupo">
+                    <label for="v-imagen">Logo o imagen</label>
+                    <input class="Form-control" id="v-imagen" name="imagen" type="file" accept="image/*">
+                </div>
+                <p class="Form-error" role="alert"></p>
+            </div>
+            <div class="Modal-pie">
+                <button type="button" class="btn-secundario" data-cerrar>Cancelar</button>
+                <button type="submit" class="btn-yapo">Publicar vacante</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="Piepagina">
+        <p>© 2026 Kevin y Sara</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

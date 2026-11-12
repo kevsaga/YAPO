@@ -1,0 +1,572 @@
+:root {
+  --cielo-50:  #fff7fc;
+  --cielo-100: #f9ecf8;
+  --cielo-200: #efd8f6;
+  --cielo-400: #d8a9ea;
+  --cielo-500: #c785df;
+  --cielo-700: #9d5fb9;
+
+  --tinta: #5b3b67;
+  --tinta-suave: #755682;
+  --blanco: #ffffff;
+
+  --fuente-titulo: "Fraunces", Georgia, serif;
+  --fuente-texto: "Nunito", system-ui, sans-serif;
+  --radio: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--tinta-suave);
+  background: var(--cielo-50);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  color: var(--tinta);
+  line-height: 1.15;
+  margin: 0 0 .5em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--cielo-500);
+  outline-offset: 3px;
+}
+
+/* ---------- NAV ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem clamp(1.25rem, 5vw, 4rem);
+
+  background: rgba(249, 236, 248, 0.9);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid var(--cielo-400);
+
+  box-shadow:
+    0 0 18px rgba(216, 169, 234, .7),
+    0 0 35px rgba(239, 216, 246, .5);
+}
+
+/* ---------- PRESENTACIÓN ---------- */
+
+.Presentacion {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.Presentacion h1 {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  margin-bottom: .1em;
+}
+
+.Rol {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cielo-700);
+  margin: 0 0 1rem;
+}
+
+.Presentacion-Logo {
+  display: flex;
+  justify-content: center;
+}
+
+.Presentacion-Logo img {
+  width: min(320px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 8px solid var(--blanco);
+
+  box-shadow:
+    0 5px 15px rgba(91, 59, 103, .18),
+    0 0 18px var(--cielo-200),
+    0 0 35px rgba(199, 133, 223, .65),
+    0 0 55px rgba(239, 216, 246, .6);
+}
+
+/* ---------- SECCIONES ---------- */
+
+.seccion {
+  padding: clamp(3rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.seccion > * {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seccion2 {
+  background: var(--cielo-100);
+}
+
+.seccion2 h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.Sobremi {
+  max-width: 60ch;
+}
+
+/* ---------- TARJETAS ---------- */
+
+.Tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.Tarjeta {
+  background: var(--blanco);
+  padding: 1.2rem 1.2rem 1.5rem;
+  border-radius: var(--radio);
+
+  border: 1px solid var(--cielo-200);
+
+  box-shadow:
+    0 8px 20px rgba(199, 133, 223, .15);
+}
+
+.Tarjeta:hover {
+  transform: translateY(-5px);
+  transition: .3s;
+  box-shadow:
+    0 15px 30px rgba(199, 133, 223, .28);
+}
+
+.Tarjeta-img {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #f7d7ef,
+    #d8a9ea,
+    #c785df
+  );
+
+  margin-bottom: 1rem;
+}
+.Tarjeta-im {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: block;
+}
+.Tarjeta h3 {
+  font-size: 1.25rem;
+}
+
+.Tarjeta p {
+  margin: 0 0 1rem;
+  font-size: .98rem;
+}
+
+/* ---------- ENLACES ---------- */
+
+.enlace {
+  font-weight: 700;
+  color: var(--cielo-500);
+  border-bottom: 2px solid var(--cielo-200);
+  transition: .3s;
+}
+
+.enlace:hover {
+  color: var(--cielo-700);
+  border-color: var(--cielo-500);
+}
+
+/* ---------- CONTACTO ---------- */
+
+.Contacto {
+  background: linear-gradient(
+    180deg,
+    #fdf6fc,
+    #f3e5f8
+  );
+  text-align: center;
+}
+
+/* ---------- FOOTER ---------- */
+
+.Piepagina {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: .9rem;
+  color: var(--blanco);
+
+  background: linear-gradient(
+    90deg,
+    #9d5fb9,
+    #c785df
+  );
+}
+
+.Piepagina p {
+  margin: 0;
+}
+/* ==========================================================================
+   ESTILOS PARA PÁGINAS INTERNAS (PROMOTORAS Y NEGOCIOS)
+   ========================================================================== */
+
+/* ---------- ETIQUETAS Y BADGES ---------- */
+.badge-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--tinta);
+  background-color: var(--cielo-200);
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.badge-tag.destacado {
+  background-color: var(--cielo-500);
+  color: var(--blanco);
+}
+
+/* ---------- DETALLES EN TARJETAS DE VACANTES/PERFILES ---------- */
+.Tarjeta-info {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 1.2rem;
+  font-size: 0.93rem;
+  color: var(--tinta-suave);
+}
+
+.Tarjeta-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.Tarjeta-info i {
+  color: var(--cielo-700);
+  font-size: 1.1rem;
+}
+
+/* ---------- FORMULARIOS DE REGISTRO / PUBLICACIÓN ---------- */
+.Formulario-contenedor {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--cielo-200);
+  box-shadow: 0 8px 20px rgba(199, 133, 223, 0.15);
+  max-width: 650px;
+  margin: 2rem auto 0;
+}
+
+.Form-grupo {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.Form-grupo label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--tinta);
+}
+
+.Form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--fuente-texto);
+  font-size: 0.98rem;
+  border: 1.5px solid var(--cielo-200);
+  border-radius: 10px;
+  background-color: var(--cielo-50);
+  color: var(--tinta);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.Form-control:focus {
+  border-color: var(--cielo-500);
+  background-color: var(--blanco);
+  box-shadow: 0 0 8px rgba(199, 133, 223, 0.3);
+}
+
+/* ---------- BOTONES PERSONALIZADOS ---------- */
+.btn-yapo {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--blanco);
+  background: linear-gradient(135deg, var(--cielo-500), var(--cielo-700));
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(157, 95, 185, 0.3);
+}
+
+.btn-yapo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(157, 95, 185, 0.45);
+  color: var(--blanco);
+}
+/* ---------- CONTROL DE TAMAÑO IGUAL PARA TODAS LAS IMÁGENES ---------- */
+.Tarjeta-img {
+  width: 100% !important;
+  height: 200px !important; /* Fuerza a que ambas cajas midan exactamente 200px de alto */
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  margin-bottom: 1rem !important;
+  background-color: var(--cielo-100) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.Tarjeta-im {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important; /* Ajusta la ilustración sin deformarla ni estirarla */
+  padding: 10px !important;
+  display: block !important;
+}
+
+/* ==========================================================================
+   FILTROS, MODAL Y ELEMENTOS DINÁMICOS (JavaScript)
+   ========================================================================== */
+
+/* ---------- BARRA DE FILTROS ---------- */
+.Barra-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.Barra-filtros .Form-control {
+  flex: 1 1 200px;
+  width: auto;
+}
+
+/* ---------- BOTONES SECUNDARIOS ---------- */
+.btn-secundario {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--cielo-700);
+  background: var(--blanco);
+  border: 1.5px solid var(--cielo-400);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+  background: var(--cielo-100);
+  border-color: var(--cielo-500);
+}
+
+.btn-eliminar {
+  margin-left: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  font-family: var(--fuente-texto);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #a33a5b;
+  background: transparent;
+  border: 1.5px solid #e7b6c6;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background: #fbe8ee;
+}
+
+.Tarjeta-acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ---------- ESTADO VACÍO / SIN FOTO ---------- */
+.sin-foto {
+  font-size: 4.5rem;
+  color: var(--cielo-400);
+}
+
+.Vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--tinta-suave);
+}
+
+/* ---------- MODAL (etiqueta <dialog>) ---------- */
+dialog.Modal {
+  width: min(560px, 92vw);
+  max-height: 90vh;
+  padding: 0;
+  border: 1px solid var(--cielo-200);
+  border-radius: var(--radio);
+  background: var(--blanco);
+  color: var(--tinta-suave);
+  box-shadow: 0 20px 50px rgba(91, 59, 103, 0.3);
+  overflow: hidden;
+}
+
+dialog.Modal::backdrop {
+  background: rgba(91, 59, 103, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.Modal form {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.Modal-cabecera {
+  padding: 1.25rem 1.5rem 0.5rem;
+}
+
+.Modal-cabecera h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.Modal-cuerpo {
+  padding: 0.5rem 1.5rem 1rem;
+  overflow-y: auto;
+}
+
+.Modal-pie {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--cielo-200);
+  background: var(--cielo-50);
+}
+
+.Form-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .Form-fila { grid-template-columns: 1fr; }
+}
+
+.Form-ayuda {
+  font-size: 0.85rem;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+.Form-error {
+  color: #a33a5b;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin: 0.5rem 0 0;
+  min-height: 1.2em;
+}
+
+/* Etiquetas seleccionables (BTL, Eventos...) */
+.Opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.Opciones label {
+  cursor: pointer;
+}
+
+.Opciones input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Opciones span {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border: 1.5px solid var(--cielo-200);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tinta);
+  transition: all 0.2s ease;
+}
+
+.Opciones input:checked + span {
+  background: var(--cielo-500);
+  border-color: var(--cielo-500);
+  color: var(--blanco);
+}
+
+.Opciones input:focus-visible + span {
+  outline: 3px solid var(--cielo-500);
+  outline-offset: 2px;
+}
+
+.Form-check {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.Form-check input {
+  margin-top: 0.3rem;
+  accent-color: var(--cielo-700);
+}
+
+.Form-control:focus-visible {
+  outline: none;
+}
